@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Play In Your Closet — personal styling &amp; closet consulting</title>
+<meta name="description" content="Closet sessions and thrift sourcing in New York. We work with what you already own first.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,600&family=Karla:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:  #F6F1E8;
+  --white:  #FFFFFF;
+  --ink:    #1C1A17;
+  --ink-60: #5B564E;
+  --accent: #C1643A; /* terracotta — swap this one line for green (#4B5D44) or blue (#4E6B86) */
+  --line:   rgba(28,26,23,.12);
+
+  --serif: "Fraunces", Georgia, serif;
+  --sans:  "Karla", "Helvetica Neue", Arial, sans-serif;
+  --gutter: clamp(1.25rem, 5vw, 4.5rem);
+}
+:root{ color-scheme: light; }
+*,*::before,*::after{ box-sizing:border-box; }
+html{ scroll-padding-top:env(safe-area-inset-top,0px); }
+body{
+  margin:0; background:var(--cream); color:var(--ink);
+  font-family:var(--sans); font-size:clamp(1rem,0.95rem + 0.25vw,1.0625rem);
+  line-height:1.65; -webkit-font-smoothing:antialiased;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+a{ color:var(--accent); }
+a:focus-visible, button:focus-visible{ outline:2px solid var(--accent); outline-offset:3px; }
+section{ padding:clamp(3rem,7vw,6rem) var(--gutter); }
+.wrap{ max-width:72rem; margin:0 auto; }
+h1,h2,h3{ font-family:var(--serif); letter-spacing:-0.015em; margin:0; }
+h1{ font-weight:300; font-size:clamp(2.4rem,6.5vw,4.8rem); line-height:1.05; max-width:17ch; text-wrap:balance; }
+h1 em{ font-style:italic; color:var(--accent); font-weight:500; }
+h2{ font-weight:300; font-size:clamp(1.8rem,1.3rem + 2vw,2.9rem); line-height:1.1; margin-bottom:1.1rem; max-width:20ch; }
+h3{ font-weight:600; font-size:1.2rem; margin-bottom:.4rem; }
+p{ max-width:60ch; }
+.lede{ color:var(--ink-60); max-width:50ch; }
+
+/* HERO */
+.hero{ display:grid; gap:2.5rem; align-items:center; padding-top:clamp(2rem,6vw,3.5rem); }
+@media(min-width:60rem){ .hero{ grid-template-columns:1.1fr 1fr; gap:3rem; min-height:82svh; } }
+.mark{ font-family:var(--serif); font-size:1.05rem; color:var(--accent); margin:0 0 2rem; }
+.hero p{ color:var(--ink-60); font-size:1.15rem; margin:1.5rem 0 0; }
+.hero-actions{ display:flex; flex-wrap:wrap; gap:1rem 1.25rem; margin-top:2.25rem; }
+.btn{ display:inline-block; font-weight:600; padding:.9rem 1.6rem; background:var(--ink); color:var(--cream); border:1.5px solid var(--ink); border-radius:999px; text-decoration:none; cursor:pointer; transition:.18s ease; }
+.btn:hover{ background:transparent; color:var(--ink); }
+.btn-quiet{ background:transparent; color:var(--ink); border-color:var(--line); }
+.btn-quiet:hover{ border-color:var(--ink); }
+
+/* PHOTO PLACEHOLDERS — swap each for a real <img src="..."> later */
+.photo{
+  aspect-ratio:4/5; border-radius:2px; position:relative; overflow:hidden;
+  background:linear-gradient(155deg,#E4DACB 0%,#D8C9B2 55%,#CBB896 100%);
+  display:flex; align-items:center; justify-content:center; text-align:center;
+}
+.photo span{ color:var(--ink-60); font-size:.85rem; padding:0 1.5rem; }
+.photo.wide{ aspect-ratio:16/9; }
+
+/* RULE + SECTION LABEL */
+.rule{ border-top:1px solid var(--line); }
+.label{ font-family:var(--serif); font-style:italic; color:var(--accent); font-size:1rem; margin-bottom:.75rem; }
+
+/* HOW IT WORKS */
+.steps{ list-style:none; counter-reset:step; padding:0; margin:2.5rem 0 0; display:grid; gap:2.25rem; grid-template-columns:repeat(auto-fit,minmax(15rem,1fr)); }
+.steps li{ counter-increment:step; }
+.steps li::before{ content:counter(step); font-family:var(--serif); color:var(--accent); display:block; padding-bottom:.6rem; margin-bottom:.9rem; border-bottom:1px solid var(--line); }
+.steps p{ margin:0; color:var(--ink-60); }
+
+/* GALLERY STRIP */
+.gallery{ display:grid; gap:1rem; grid-template-columns:repeat(3,1fr); margin-top:2.5rem; }
+@media(max-width:46rem){ .gallery{ grid-template-columns:1fr 1fr; } .gallery .photo:first-child{ grid-column:1/-1; } }
+
+/* SERVICES */
+.services{ margin-top:2.5rem; }
+.service{ display:grid; gap:.4rem; padding:1.75rem 0; border-top:1px solid var(--line); }
+.service:last-child{ border-bottom:1px solid var(--line); }
+.service p{ margin:0; color:var(--ink-60); }
+.price{ font-family:var(--serif); color:var(--accent); }
+@media(min-width:46rem){ .service{ grid-template-columns:13rem 1fr 7rem; align-items:start; } .price{ text-align:right; } }
+
+/* INTAKE */
+.intake{ background:var(--white); }
+.bring{ list-style:none; padding:0; margin:2.25rem 0 0; display:grid; gap:1.4rem; grid-template-columns:repeat(auto-fit,minmax(15rem,1fr)); }
+.bring li{ padding-left:1.5rem; position:relative; color:var(--ink-60); }
+.bring li::before{ content:""; position:absolute; left:0; top:.55em; width:8px; height:8px; border:1.5px solid var(--accent); border-radius:50%; }
+.bring strong{ color:var(--ink); font-weight:600; display:block; }
+
+/* BOOKING */
+#booking-slot{ margin-top:2.25rem; min-height:520px; }
+
+footer{ padding:2.5rem var(--gutter) 3.5rem; border-top:1px solid var(--line); display:flex; flex-wrap:wrap; gap:1rem 2rem; justify-content:space-between; color:var(--ink-60); font-size:.95rem; }
+footer .mark{ margin:0; }
+</style>
+</head>
+<body>
+
+<section class="hero" id="top">
+  <div>
+    <p class="mark">Play In Your Closet</p>
+    <h1>You own forty things you love and wear <em>six</em> of them.</h1>
+    <p>Personal styling and closet consulting in New York. We start with what's
+      already hanging there — the pieces you kept for a reason and never quite figured out.</p>
+    <div class="hero-actions">
+      <a class="btn" href="#book">Book a free intro call</a>
+      <a class="btn btn-quiet" href="#services">See a session</a>
+    </div>
+  </div>
+  <div class="photo"><span>Hero photo — you, or a closet shot</span></div>
+</section>
+
+<section class="rule">
+  <div class="wrap">
+    <p class="label">How it works</p>
+    <h2>Three steps, first one's free.</h2>
+    <ol class="steps">
+      <li><h3>Fifteen minutes on the phone</h3><p>Send a few photos ahead of time, talk through what's frustrating you, find out if it's worth your money before spending any.</p></li>
+      <li><h3>We get in the closet</h3><p>Two to three hours pulling everything out and building outfits from what you own. You keep photos of every look.</p></li>
+      <li><h3>We fill the actual gaps</h3><p>Once we know what's missing, I source it — mostly secondhand, within a budget you set first.</p></li>
+    </ol>
+    <div class="gallery">
+      <div class="photo wide"><span>Before / after closet edit</span></div>
+      <div class="photo"><span>Outfit build</span></div>
+      <div class="photo"><span>Sourced piece</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="rule" id="services">
+  <div class="wrap">
+    <p class="label">Services</p>
+    <h2>What you can book</h2>
+    <div class="services">
+      <div class="service"><h3>Intro call</h3><p>Fifteen minutes. I tell you honestly whether I can help and what it costs.</p><span class="price">Free</span></div>
+      <div class="service"><h3>Closet session</h3><p>Two to three hours in your closet. Nothing gets bought — we build outfits from what you already own.</p><span class="price">$—</span></div>
+      <div class="service"><h3>Thrift sourcing</h3><p>I shop the gaps we found — secondhand first — and bring options to you.</p><span class="price">$—</span></div>
+      <div class="service"><h3>Session + sourcing</h3><p>The full thing, booked together.</p><span class="price">$—</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="intake rule" id="before">
+  <div class="wrap">
+    <p class="label">Before we talk</p>
+    <h2>Send these four things first</h2>
+    <ul class="bring">
+      <li><strong>Someone whose style you'd steal</strong>A name or a screenshot.</li>
+      <li><strong>A photo of your uniform</strong>Whatever you actually reach for on a normal Tuesday.</li>
+      <li><strong>The piece you never wear</strong>The one you can't get rid of and can't figure out.</li>
+      <li><strong>What you want out of the time</strong>One sentence is enough.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="rule" id="book">
+  <div class="wrap">
+    <p class="label">Book</p>
+    <h2>Book the intro call</h2>
+    <p class="lede">Pick any open slot. You'll get a confirmation email, then the questionnaire.</p>
+    <div id="booking-slot">
+      <!-- Cal inline embed code begins -->
+      <div style="width:100%;height:100%;overflow:scroll" id="my-cal-inline-introcall"></div>
+      <script type="text/javascript">
+        (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+        Cal("init", "introcall", {origin:"https://app.cal.com"});
+        Cal.config = Cal.config || {};
+        Cal.config.forwardQueryParams = true;
+        Cal.ns.introcall("inline", { elementOrSelector:"#my-cal-inline-introcall", config: {"layout":"month_view","useSlotsViewOnSmallScreen":"true"}, calLink: "closetstyle/introcall" });
+        Cal.ns.introcall("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
+      </script>
+      <!-- Cal inline embed code ends -->
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p class="mark">Play In Your Closet</p>
+  <p style="margin:0"><a href="mailto:hello@example.com">hello@example.com</a> &nbsp;·&nbsp; <a href="https://instagram.com/" rel="noopener">Instagram</a></p>
+  <p style="margin:0">New York, NY</p>
+</footer>
+
+</body>
+</html>

@@ -448,21 +448,21 @@ footer .mark{ margin:0; }
  
     <div id="booking-slot">
       <!-- Cal inline embed code begins -->
-      <div style="width:100%;height:100%;overflow:scroll" id="my-cal-inline-introcall"></div>
-      <script type="text/javascript">
-        (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
-        Cal("init", "introcall", {origin:"https://app.cal.com"});
-        Cal.config = Cal.config || {};
-        Cal.config.forwardQueryParams = true;
- 
-        Cal.ns.introcall("inline", {
-          elementOrSelector:"#my-cal-inline-introcall",
-          config: {"layout":"month_view","useSlotsViewOnSmallScreen":"true"},
-          calLink: "closetstyle/introcall",
-        });
- 
-        Cal.ns.introcall("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
-      </script>
+<div style="width:100%;height:100%;overflow:scroll" id="my-cal-inline-closetchat"></div>
+<script type="text/javascript">
+  (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+Cal("init", "closetchat", {origin:"https://app.cal.com"});
+Cal.config = Cal.config || {};
+Cal.config.forwardQueryParams = true;
+
+  Cal.ns.closetchat("inline", {
+    elementOrSelector:"#my-cal-inline-closetchat",
+    config: {"layout":"month_view","useSlotsViewOnSmallScreen":"true"},
+    calLink: "styledbymakeda/closetchat",
+  });
+
+  Cal.ns.closetchat("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
+  </script>
       <!-- Cal inline embed code ends -->
     </div>
   </div>
@@ -474,9 +474,9 @@ footer .mark{ margin:0; }
      EDIT: email, Instagram handle
      ============================================================ -->
 <footer>
-  <p class="mark">Play In Your Closet</p>
+  <p class="mark">Styled by Makeda</p>
   <p style="margin:0">
-    <a href="mailto:hello@example.com">hello@example.com</a>
+    <a href="mailto:getstyledbymakeda@gmail.com">GetStyledbyMakeda@gmail.com</a>
     &nbsp;·&nbsp;
     <a href="https://instagram.com/" rel="noopener">Instagram</a>
   </p>
